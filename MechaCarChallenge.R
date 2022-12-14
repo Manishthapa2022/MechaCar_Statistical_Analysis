@@ -3,7 +3,7 @@
 library(tidyverse)
 library(jsonlite)
 # reading csv file into a Dataframe
-mecha_car <- read.csv("MechaCar_mpg.csv")
+mecha_car <- read.csv("MechaCar_mpg.csv", check.names= F, stringsAsFactors = F)
 head(mecha_car)
 # Linear regression
 lm(mpg ~ vehicle_length + vehicle_weight+ spoiler_angle + ground_clearance +AWD, data=mecha_car)
@@ -12,7 +12,7 @@ summary(lm(mpg ~ vehicle_length + vehicle_weight+ spoiler_angle + ground_clearan
 
 # part 2
 # Import the csv file
-coils <- read.csv("Suspension_Coil.csv")
+coils <- read.csv("Suspension_Coil.csv", check.names= F, stringsAsFactors = F)
 # r script for total _summary
 total_summary <- coils %>% summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI))
 total_summary
